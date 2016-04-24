@@ -4,8 +4,8 @@ include ( './php/checksession.php' );
 include('./php/config.php');
 $connection = mysqli_connect($server, $u_name, $dbpass, $dbname);
 
-$id=mysqli_real_escape_string($connection, $_SESSION["id"]);
-$query = "SELECT stock_symbol FROM user_stock WHERE user_id =\"$id\"";
+$id=$_SESSION["id"];
+$query = "SELECT stock_symbol FROM user_stock WHERE user_id='".$id."'";
 $symbols = mysqli_query($connection, $query);
 $query1 = "SELECT Name FROM stock_data WHERE Symbol in ".$symbol;
 $names = mysqli_query($connection, $query1);
@@ -20,6 +20,10 @@ $names = mysqli_query($connection, $query1);
 	<script type="text/javascript">
 		google.charts.load('current', {'packages':['corechart']});
 		google.charts.setOnLoadCallback(function(){});
+
+		var id=<?php echo json_encode($id); ?>;
+    	var symbols = <?php echo json_encode($symbols); ?>;
+    	var names = <?php echo json_encode($names); ?>;
 
 		var apiKey="&apikey=e245944e-ed5b-4676-87d5-7dd87fffd55b";
 
