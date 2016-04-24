@@ -58,4 +58,10 @@ if(isset($_POST['register']))
     header("Location: ../register.php");
 }
 
+if(isset($_POST['skip']))
+{
+    $_SESSION["atrangi"] = 911;
+    header("Location: ../stocks.html");
+}
+
 ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2016 at 08:23 AM
+-- Generation Time: Apr 24, 2016 at 08:32 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -3214,6 +3214,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
+  `mobile` int(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
   PRIMARY KEY (`id`,`username`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
@@ -3221,8 +3223,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`) VALUES
-(1, 'admin', 'admin');
+INSERT INTO `user` (`id`, `username`, `password`, `mobile`, `email`) VALUES
+(1, 'admin', 'admin', 0, '');
 
 -- --------------------------------------------------------
 

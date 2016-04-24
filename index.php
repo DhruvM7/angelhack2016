@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <?php
-$error = "Please login to continue";
+$error = "Please login/skip to continue";
 if(isset($_GET["error"]))
 {
 	switch($_GET["error"])
@@ -59,6 +59,9 @@ if(isset($_GET["error"]))
 									<tr style="text-align: center; background-color: rgba(0,0,0,0);">
 										<td><input type="submit" name="register" value="Register" /></td>
 									</tr>
+									<tr style="text-align: center; background-color: rgba(0,0,0,0);">
+										<td><input type="submit" name="skip" value="Skip" /></td>
+									</tr>
 								</form>
 							</table>
 							<a href="#" class="close">Close</a>
@@ -69,7 +72,8 @@ if(isset($_GET["error"]))
 					<section id="banner">
 						<div class="inner">
 							<div class="logo"><span class="icon fa-area-chart"></span></div>
-							<h2 style="text-align: center;">FINANCIAL MARKET TOOL-BOX</h2>
+							<h2 style="text-align: center;">QuantEdge</h2>
+							<p align="center">The Ultimate Stock-Market Toolbox</p>
 							<h4 style="text-align: center;"><?php echo $error; ?></h4>
 						</div>
 					</section>
