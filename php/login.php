@@ -61,7 +61,7 @@ if(isset($_POST['register']))
 if(isset($_POST['skip']))
 {
     $_SESSION["atrangi"] = 911;
-    header("Location: ../stocks.html");
+    header("Location: ../stocks.php");
 }
 
 ?>
