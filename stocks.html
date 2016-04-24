@@ -60,29 +60,33 @@
 	</style>
 </head>
 <body>
-
-<div class="row">
-	<div class="col s4">
+<div class="row center">
+	<h2>Quant<span style="color: blue;">Edge</span></h2>
+	<h4>The Ultimate Stock Market Toolbox</h4>
+	<hr width="50%">
+</div>
+<div class="row center">
+	<div class="input-field col s6 center">
 		<form action="javascript:query()">
 		<input type="text" id="input" value="Microsoft"></input>
-		<button type="submit">News and Sentiment</button>
+		<label class="active" for="input">Company name, and keywords if any</label>
+		<button type="submit" class="btn waves-effect waves-light">News and Sentiment</button>
 		</form>
 	</div>
-	<div class="col s4">
+	<div class="input-field col s6 center">
 		<form action="javascript:stockInfo()">
 		<input type="text" id="symbol" value="MSFT"></input>
-		<button type="submit">Technical Analysis</button>
+		<label class="active" for="symbol">Stock Symbol (NASDAQ/Yahoo Finance)</label>
+		<button type="submit" class="btn waves-effect waves-light">Technical Analysis</button>
 		</form>	
 	</div>	
 </div>
-
-
 <div id="stockData" class="row center">
 	<div class="row">
 		<h5>Technical Analysis</h5>
 	</div>
 	<div class="row">
-		<div id="simMovAvg" class="col s6">
+		<div id="simMovAvg" class="col s6" style="border-right: 2px solid teal">
 			<div class="row">
 				Simple Moving Averages
 			</div>
@@ -99,7 +103,10 @@
 				<div class="col s3">
 					<span>50 Day: </span><span></span>
 				</div>
-			</div>		
+			</div>	
+			<div class="row">
+				<a class="waves-effect waves-light btn" href="javascript:drawSMAchart()">View Graph</a>
+			</div>	
 		</div>
 		<div id="expMovAvg" class="col s6 center">
 			<div class="row">
@@ -118,7 +125,10 @@
 				<div class="col s3">
 					<span>50 Day: </span><span></span>
 				</div>
-			</div>		
+			</div>
+			<div class="row">
+				<a class="waves-effect waves-light btn" href="javascript:drawEMAchart()">View Graph</a>
+			</div>			
 		</div>
 		<div id="roc"></div>
 		<div id="oscillator"></div>
@@ -130,7 +140,7 @@
 
 <div id="status"></div>
 
-<div id="sentiment"></div>
+<div id="sentiment" class="center"></div>
 
 <div id="newsItems"></div>
 
@@ -229,7 +239,7 @@ function showTechnicalAnalysis()
 			$(x).text(fixed(stockData.EMA50day[0],2));
 	});
 
-	drawSMAchart();
+	//drawSMAchart();
 }
 
 function fixed(floating, places)
